@@ -33,8 +33,8 @@ export const Home = () => {
         })
     }
 
-    
-    
+
+
     const pinnedNote = notes?.length > 0 && notes.filter(({ isPin }) => isPin);
     const otherNote = notes?.length > 0 && notes.filter(({ isPin }) => !isPin);
 
@@ -42,18 +42,20 @@ export const Home = () => {
         <Fragment>
             <Navbar />
             <main className='flex'>
-                <Sidebar />
-                <div>
-                    <div className='flex flex-col w-[300px] border border-red-400 relative rounded-md' >
-                        <input value={title} onChange={onTitleChange} className="border border-neutral-400 rounded-t-md focus:outline-none border-b-0 p-1" placeholder='Enter Title' />
-                        <textarea value={text} onChange={onTextChange} className="border border-neutral-800 rounded-b-md focus:outline-none border-t-0 p-1" placeholder='Enter Text' />
-                        <button disabled={(text?.length <= 0 || title?.length <= 0) && 'disabled'} className="absolute bottom-0 right-0 w-7 h-7  border bg-indigo-800 text-slate-50 rounded-full" onClick={onAddClick}>
-                            <span className="material-icons">
-                                add
-                            </span>
-                        </button>
+                <Sidebar className='basis-1/5' />
+                <div className="basis-4/5 w-full">
+                    <div className="flex justify-center pt-6">
+                        <div className='flex flex-col w-[300px] border  relative rounded-md' >
+                            <input value={title} onChange={onTitleChange} className="border border-neutral-800 rounded-t-md focus:outline-none border-b-0 p-1" placeholder='Enter Title' />
+                            <textarea value={text} onChange={onTextChange} className="border border-neutral-800 rounded-b-md focus:outline-none border-t-0 p-1" placeholder='Enter Text' />
+                            <button disabled={(text?.length <= 0 || title?.length <= 0) && 'disabled'} className="absolute bottom-0 right-0 w-7 h-7  border bg-indigo-800 text-slate-50 rounded-full" onClick={onAddClick}>
+                                <span className="material-icons">
+                                    add
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                    
+
                     <div>
                         {pinnedNote?.length > 0 && <h1 className="mt-10 mb-2 pl-4">PinnedNote</h1>}
                         <div className='mt-18 flex flex-wrap gap-6'>

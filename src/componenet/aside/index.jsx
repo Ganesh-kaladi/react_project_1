@@ -6,7 +6,7 @@ export const Sidebar = () => {
         return isActive ? 'bg-indigo-800 flex content-center gap-2 px-2 py-1 rounded-tr-full rounded-br-full text-gray-100' :'hover:bg-indigo-800 hover:text-gray-100 flex content-center gap-2 px-2 py-1 rounded-tr-full rounded-br-full'
     }
     return (
-        <aside className='flex flex-col gap-3 border-r-2 border-gray-400 w-[150px] h-screen p-3'>
+        <aside className='flex flex-col gap-3 border-r-2 border-gray-400 h-screen p-3'>
 
             <NavLink to='/' className={style}>
                 <span className="material-icons">

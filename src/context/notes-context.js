@@ -10,8 +10,8 @@ const NotesProvider = ({children})=>{
         title: "",
         text: '',
         notes: [],
-        archive:[],
-        deleteNote:[]
+        archive: JSON.parse(localStorage.getItem('archive')) || [],
+        deleteNote: JSON.parse(localStorage.getItem('deleteNote')) || []
     }
 
     const [{ title, text, notes, archive,deleteNote }, notesDispatch] = useReducer(notesReducer, initialState);
