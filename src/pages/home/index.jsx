@@ -8,6 +8,8 @@ import { Notecard } from "../../componenet/noteCard"
 export const Home = () => {
 
     const { title, text, notes, notesDispatch } = useNotes();
+    
+
 
 
     const onTitleChange = (e) => {
